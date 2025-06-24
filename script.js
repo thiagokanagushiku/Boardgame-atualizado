@@ -1,6 +1,6 @@
 const board = document.getElementById("board");
 const colors = ["blue", "yellow", "red", "green"];
-const samePages = [3,7,11,15,19,23,27,31,35];
+const samePages = [1,5,9,13,17,21,25,29,33];
 let cells = [];
 
 for (let row = 0; row < 6; row++) {
