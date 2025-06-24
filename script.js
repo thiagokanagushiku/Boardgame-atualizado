@@ -1,5 +1,5 @@
 const board = document.getElementById("board");
-const colors = ["red", "blue", "green", "yellow"];
+const colors = ["blue", "yellow", "red", "green"];
 const samePages = [3,7,11,15,19,23,27,31,35];
 let cells = [];
 
