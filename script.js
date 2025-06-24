@@ -1,21 +1,25 @@
 const board = document.getElementById("board");
 const colors = ["blue", "yellow", "red", "green"];
-const samePages = [1,5,9,13,17,21,25,29,33];
+const samePages = [1,5,9,13,17,21,25,29];
 let cells = [];
 
-for (let row = 0; row < 6; row++) {
-  for (let col = 0; col < 6; col++) {
+for (let row = 0; row < 5; row++) { // 5 linhas
+  for (let col = 0; col < 6; col++) { // 6 colunas
     let i = row * 6 + col + 1;
     if (row % 2 === 1) {
       i = row * 6 + (6 - col);
     }
-    if (i === 37) break;
+    if (i === 31) break; // parar no 31
     const cell = document.createElement("div");
     cell.className = "cell";
     if (i === 1) {
       cell.textContent = "スタート";
       cell.classList.add("start");
       cell.dataset.num = 0;
+    } else if (i === 30) {
+      cell.textContent = "ゴール";
+      cell.classList.add(colors[(i - 2) % 4]);
+      cell.dataset.num = 30;
     } else {
       cell.textContent = i - 1;
       cell.classList.add(colors[(i - 2) % 4]);
@@ -27,7 +31,7 @@ for (let row = 0; row < 6; row++) {
     markerContainer.className = "markers";
     cell.appendChild(markerContainer);
 
-    if (i > 1) {
+    if (i > 1 && i < 30) {
       if (samePages.includes(i - 1)) {
         cell.onclick = () => window.open("pagina_externa.html", "_blank");
       } else {
@@ -74,7 +78,7 @@ function moveSelected(step) {
 function moveGroup(groupNum, step) {
   let pos = groups[groupNum].position + step;
   if (pos < 0) pos = 0;
-  if (pos > 36) pos = 36;
+  if (pos > 30) pos = 30; // máximo agora é 30
   groups[groupNum].position = pos;
   document.querySelector(`#cell-${pos} .markers`).appendChild(groups[groupNum].marker);
 }
