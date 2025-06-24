@@ -18,7 +18,7 @@ for (let row = 0; row < 5; row++) { // 5 linhas
       cell.dataset.num = 0;
     } else if (i === 30) {
       cell.textContent = "ゴール";
-      cell.classList.add(colors[(i - 2) % 4]);
+      cell.classList.add("goal");
       cell.dataset.num = 30;
     } else {
       cell.textContent = i - 1;
