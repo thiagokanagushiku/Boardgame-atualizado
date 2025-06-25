@@ -1,6 +1,6 @@
 const board = document.getElementById("board");
 const colors = ["blue", "yellow", "red", "green"];
-const samePages = [1,5,9,13,17,21,25,29];
+const samePages = [1,5,9,13,17,21,25];
 let cells = [];
 
 for (let row = 0; row < 5; row++) { // 5 linhas
