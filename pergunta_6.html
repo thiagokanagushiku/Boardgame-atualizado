@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,7 +20,6 @@
     <img src="imagens/prato-feito.jpeg" alt="Exemplo" style="max-width:100%;">
     <!-- Ou vídeo do YouTube: 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    -->
   </div>
   <p>１ 米と小麦</p>
   <p>２ パンと豆</p>
@@ -32,6 +32,79 @@
   <script>
     function showAnswer() {
       const ans = document.getElementById('answer');
+      ans.style.display = 'block';
+      setTimeout(() => ans.classList.add('correct'), 200);
+    }
+  </script>
+</body>
+</html>
+    -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>クイズページ</title>
+  <style>
+    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
+    h1 { font-size: 40px; margin-bottom: 40px; }
+    .media { margin: 20px auto; max-width: 80%;｝
+    .quiz-block {
+      background: #333;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
+    p { font-size: 24px; }
+    .answer {
+      display: none;
+      padding: 20px;
+      background: #444;
+      margin-top: 20px;
+      transition: background 0.5s;
+    }
+    .answer.correct {
+      background: green;
+      font-size: 40px;
+    }
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ポルトガル語クイズ</h1>
+
+  <!-- Pergunta 1 -->
+  <div class="quiz-block">
+    <p>ブラジルの主食は？</p>
+    <p>１ 米と小麦</p>
+  　<p>２ パンと豆</p>
+ 　 <p>３ 米と豆</p>
+  　<p>４ ジャガイモと豆</p
+    <button onclick="showAnswer('a1')">正解</button>
+    <div id="a1" class="answer">３　米と豆</div>
+  </div>
+
+  <!-- Pergunta 2 -->
+  <div class="quiz-block">
+    <p>「Obrigado」の意味は？</p>
+    <p>１ こんにちは</p>
+    <p>２ ありがとう</p>
+    <p>３ おやすみ</p>
+    <p>４ さようなら</p>
+    <button onclick="showAnswer('a2')">正解</button>
+    <div id="a2" class="answer">２ ありがとう</div>
+  </div>
+
+  <button onclick="location.href='index.html'">戻る</button>
+
+  <script>
+    function showAnswer(id) {
+      const ans = document.getElementById(id);
       ans.style.display = 'block';
       setTimeout(() => ans.classList.add('correct'), 200);
     }
