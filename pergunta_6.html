@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>クイズページ</title>
+  <title>クイズ２６</title>
   <style>
     body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
     h1 { font-size: 40px; margin-bottom: 40px; }
@@ -22,7 +22,12 @@
     }
     .answer.correct {
       background: green;
-      font-size: 40px;
+      font-size: 30px;
+    }
+    .answer img {
+      width: 250px;
+      margin-top: 10px;
+      border-radius: 10px;
     }
     button {
       font-size: 20px;
@@ -30,31 +35,83 @@
       padding: 10px 20px;
       border-radius: 5px;
     }
+    .option {
+      margin: 20px 0;
+    }
+    .option img {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    /* Estilo horizontal para pergunta 2 */
+    .horizontal-options {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .horizontal-options .option {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .option-large img {
+  width: 250px;
+}
   </style>
 </head>
 <body>
-  <h1>ポルトガル語クイズ</h1>
+  <h1>①</h1>
 
   <!-- Pergunta 1 -->
   <div class="quiz-block">
-    <p>ポルトガル語はどれ？</p>
-    <p>１ ブエナス　ノーチェス</p>
-    <p>２ ボア　ノイチ</p>
-    <p>３ ブォナセーラ</p>
-    <p>４ ブゥオナノッテ</p>
+    <h1>これは何ですか？</h1>
+    <img src="./imagens/cafe-fruta.jpg" alt="Imagem da pergunta" width="300">
+
+    <div class="option">
+      <p>１ ラズベリー</p>
+    </div>
+    <div class="option">
+      <p>２ コーヒー豆</p>
+    </div>
+    <div class="option">
+      <p>３ ぶどう</p>
+    </div>
+    <div class="option">
+      <p>４ さくらんぼ</p>
+    </div>
+
     <button onclick="showAnswer('a1')">正解</button>
-    <div id="a1" class="answer">２ ボア　ノイチ</div>
+    <div id="a1" class="answer">
+      正解：２ コーヒー豆
+    </div>
   </div>
 
-  <!-- Pergunta 2 -->
+  <h1>②</h1>
+
+  <!-- Pergunta 2 - opções horizontais -->
   <div class="quiz-block">
-    <p>「Obrigado」の意味は？</p>
-    <p>１ こんにちは</p>
-    <p>２ ありがとう</p>
-    <p>３ おやすみ</p>
-    <p>４ さようなら</p>
+    <h1>ブラジルの主食は？</h1>
+    <img src="./imagens/prato-feito.jpeg" alt="Imagem da pergunta" width="300">
+
+    <div class="option">
+      <p>１ 米と小麦</p>
+    </div>
+    <div class="option">
+      <p>２ パンと豆</p>
+    </div>
+    <div class="option">
+      <p>３ 米と豆</p>
+    </div>
+    <div class="option">
+      <p>４ ジャガイモと豆</p>
+    </div>
+
     <button onclick="showAnswer('a2')">正解</button>
-    <div id="a2" class="answer">２ ありがとう</div>
+    <div id="a2" class="answer">
+      正解：米と豆
+    </div>
   </div>
 
   <button onclick="location.href='index.html'">戻る</button>
