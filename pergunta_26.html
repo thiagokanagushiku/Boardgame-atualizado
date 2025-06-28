@@ -1,21 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>クイズ２６</title>
   <style>
-    body { font-family: Arial, sans-serif; background: navy; color: white; text-align: center; padding: 50px; }
-    h1 { font-size: 50px; margin-bottom: 30px; }
+    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
+    h1 { font-size: 40px; margin-bottom: 40px; }
+    .quiz-block {
+      background: #333;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
     p { font-size: 24px; }
+    .answer {
+      display: none;
+      padding: 20px;
+      background: #444;
+      margin-top: 20px;
+      transition: background 0.5s;
+    }
+    .answer.correct {
+      background: green;
+      font-size: 30px;
+    }
+    .answer img {
+      width: 250px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .option {
+      margin: 20px 0;
+    }
+    .option img {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    /* Estilo horizontal para pergunta 2 */
+    .horizontal-options {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .horizontal-options .option {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .option-large img {
+  width: 250px;
+}
   </style>
 </head>
 <body>
-  <h1>Show do Milhão</h1>
-  <p>Pergunta para casa 26: Texto de exemplo para esta tarefa.</p>
-  <p>A) Opção A</p>
-  <p>B) Opção B</p>
-  <p>C) Opção C</p>
-  <p>D) Opção D</p>
+  <h1>①</h1>
+
+  <!-- Pergunta 1 -->
+  <div class="quiz-block">
+    <h1>ポルトガル語はどれ？</h1>
+    <img src="ボードゲーム.jpg" alt="Imagem da pergunta" width="300">
+
+    <div class="option">
+      <p>１ ブエナス　ノーチェス</p>
+    </div>
+    <div class="option">
+      <p>２ ボア　ノイチ</p>
+    </div>
+    <div class="option">
+      <p>３ ブォナセーラ</p>
+    </div>
+    <div class="option">
+      <p>４ ブゥオナノッテ</p>
+    </div>
+
+    <button onclick="showAnswer('a1')">正解</button>
+    <div id="a1" class="answer">
+      正解：２ ボア　ノイチ
+      <img src="img-resposta1.jpg" alt="Imagem da resposta 1">
+    </div>
+  </div>
+
+  <h1>②</h1>
+
+  <!-- Pergunta 2 - opções horizontais -->
+  <div class="quiz-block">
+    <h1>「Obrigado」の意味は？</h1>
+
+    <div class="horizontal-options">
+      <div class="option-large">
+        <p>１ こんにちは</p>
+        <img src="img1.jpg" alt="こんにちは">
+      </div>
+      <div class="option-large">
+        <p>２ ありがとう</p>
+        <img src="img2.jpg" alt="ありがとう">
+      </div>
+      <div class="option-large">
+        <p>３ おやすみ</p>
+        <img src="img3.jpg" alt="おやすみ">
+      </div>
+      <div class="option-large">
+        <p>４ さようなら</p>
+        <img src="img4.jpg" alt="さようなら">
+      </div>
+    </div>
+
+    <button onclick="showAnswer('a2')">正解</button>
+    <div id="a2" class="answer">
+      正解：２ ありがとう
+      <img src="img-resposta2.jpg" alt="Imagem da resposta 2">
+    </div>
+  </div>
+
+  <button onclick="location.href='index.html'">戻る</button>
+
+  <script>
+    function showAnswer(id) {
+      const ans = document.getElementById(id);
+      ans.style.display = 'block';
+      setTimeout(() => ans.classList.add('correct'), 200);
+    }
+  </script>
 </body>
 </html>
