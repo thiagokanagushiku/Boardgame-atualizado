@@ -2,31 +2,129 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>クイズ１８</title>
+  <title>クイズ２２</title>
   <style>
-    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px;  }
-    h1 { font-size: 50px; margin-bottom: 30px; }
+    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
+    h1 { font-size: 40px; margin-bottom: 40px; }
+    .quiz-block {
+      background: #333;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
     p { font-size: 24px; }
-    .media { margin: 20px auto; max-width: 80%; }
-    #answer { display: none; padding: 20px; background: #444; margin-top: 20px; transition: background 0.5s; }
-    #answer.correct { background: green;font-size: 60px; }
-    button { font-size: 20px; margin: 10px; padding: 10px 20px; }
+    .answer {
+      display: none;
+      padding: 20px;
+      background: #444;
+      margin-top: 20px;
+      transition: background 0.5s;
+    }
+    .answer.correct {
+      background: green;
+      font-size: 30px;
+    }
+    .answer img {
+      width: 250px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .option {
+      margin: 20px 0;
+    }
+    .option img {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    /* Estilo horizontal para pergunta 2 */
+    .horizontal-options {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .horizontal-options .option {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .option-large img {
+  width: 250px;
+}
   </style>
 </head>
 <body>
-   <h1>ポルトガル語は何か国で話されている？</h1
+  <h1>①</h1>
+  <!-- Pergunta 1 - opções horizontais -->
+  <div class="quiz-block">
+    <h1>ブラジルの盛んな農産物は？</h1>
+
+    <div class="horizontal-options">
+      <div class="option-large">
+        <p>１ コーヒー豆</p>
+        <img src="./imagens/cafe.jpg" alt="こんにちは">
+      </div>
+      <div class="option-large">
+        <p>２ サトウキビ</p>
+        <img src="./imagens/cana.jpg" alt="ありがとう">
+      </div>
+      <div class="option-large">
+        <p>３　大豆</p>
+        <img src="./imagens/soja.jpg" alt="おやすみ">
+      </div>
+      <div class="option-large">
+        <p>４ オレンジ</p>
+        <img src="./imagens/laranja.jpg" alt="さようなら">
+      </div>
+    </div>
+
+    <button onclick="showAnswer('a1')">正解</button>
+    <div id="a1" class="answer">
+      <h1> 正解：１ コーヒー豆</h1>
+      <h1> 正解：２ サトウキビ</h1>
+      <h1> 正解：３ 大豆</h1>
+      <h1> 正解：４ オレンジ</h1>
+    </div>
   </div>
-  <p>１ ３か国</p>
-  <p>２ ６か</p>
-  <p>３ ９か国</p>
-  <p>４ １２か国</p>
-  <button onclick="showAnswer()">正解</button>
+ <h1>②</h1>
+
+  <!-- Pergunta 2 -->
+  <div class="quiz-block">
+    <h1>ブラジルの夏休みは、いつですか？</h1>
+    <img src="ボードゲーム.jpg" alt="Imagem da pergunta" width="300">
+
+    <div class="option">
+      <p>１　７月～８月</p>
+    </div>
+    <div class="option">
+      <p>２ ３月～６月</p>
+    </div>
+    <div class="option">
+      <p>３ 12月～2月</p>
+    </div>
+    <div class="option">
+      <p>４ ９月～１０月</p>
+    </div>
+
+    <button onclick="showAnswer('a2')">正解</button>
+    <div id="a2" class="answer">
+      <h1>正解：３ 12月～2月</h1>
+    </div>
+  </div>
+
   <button onclick="location.href='index.html'">戻る</button>
-  <div id="answer">３ ９か国</div>
 
   <script>
-    function showAnswer() {
-      const ans = document.getElementById('answer');
+    function showAnswer(id) {
+      const ans = document.getElementById(id);
       ans.style.display = 'block';
       setTimeout(() => ans.classList.add('correct'), 200);
     }
