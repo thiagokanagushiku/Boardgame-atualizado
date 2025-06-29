@@ -1,52 +1,8 @@
-
-<!--
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>クイズ２２</title>
-  <style>
-    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px;  }
-    h1 { font-size: 50px; margin-bottom: 30px; }
-    p { font-size: 24px; }
-    .media { margin: 20px auto; max-width: 80%; }
-    #answer { display: none; padding: 20px; background: #444; margin-top: 20px; transition: background 0.5s; }
-    #answer.correct { background: green;font-size: 60px; }
-    button { font-size: 20px; margin: 10px; padding: 10px 20px; }
-  </style>
-</head>
-<body>
-  <h1>これは何ですか？</h1>
-<div class="media">
-    <img src="imagens/cafe-fruta.jpg" alt="Exemplo" style="max-width:35%;">
-     Ou vídeo do YouTube: 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    
-  </div>
-  </div>
-  <p>１ ラズベリー</p>
-  <p>２ コーヒー豆</p>
-  <p>３ ぶどう</p>
-  <p>４ さくらんぼ</p>
-  <button onclick="showAnswer()">正解</button>
-  <button onclick="location.href='index.html'">戻る</button>
-  <div id="answer">２ コーヒー豆</div>
-
-  <script>
-    function showAnswer() {
-      const ans = document.getElementById('answer');
-      ans.style.display = 'block';
-      setTimeout(() => ans.classList.add('correct'), 200);
-    }
-  </script>
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>クイズ２６</title>
   <style>
     body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
     h1 { font-size: 40px; margin-bottom: 40px; }
@@ -107,60 +63,59 @@
 </head>
 <body>
   <h1>①</h1>
-
-  <!-- Pergunta 1 -->
+  <!-- Pergunta 2 - opções horizontais -->
   <div class="quiz-block">
-    <h1>これは何ですか？</h1>
-    <img src="./imagens/cafe-fruta.jpg" alt="Imagem da pergunta" width="300">
+    <h1>ブラジルの有名な画家は？</h1>
 
-    <div class="option">
-      <p>１ ラズベリー</p>
-    </div>
-    <div class="option">
-      <p>２ コーヒー豆</p>
-    </div>
-    <div class="option">
-      <p>３ ぶどう</p>
-    </div>
-    <div class="option">
-      <p>４ さくらんぼ</p>
+    <div class="horizontal-options">
+      <div class="option-large">
+        <p>１ レオナルド・ダ・ヴィンチ</p>
+        <img src="./imagens/leonardo.jpg" alt="こんにちは">
+      </div>
+      <div class="option-large">
+        <p>２ タルシラ・ド・アマラル</p>
+        <img src="./imagens/tarsila.jpg" alt="ありがとう">
+      </div>
+      <div class="option-large">
+        <p>３ フィンセント・ヴィレム・ファン・ゴッホ</p>
+        <img src="./imagens/van.jpg" alt="おやすみ">
+      </div>
+      <div class="option-large">
+        <p>４ フリーダ・カーロ</p>
+        <img src="./imagens/tarsila-obra.jpg" alt="さようなら">
+      </div>
     </div>
 
     <button onclick="showAnswer('a1')">正解</button>
     <div id="a1" class="answer">
-      正解：２ ２ コーヒー豆
+      <h1> 正解：２ タルシラ・ド・アマラル</h1>
+      <img src="./imagens/tarsila.jpg" alt="Imagem da resposta 2">
     </div>
   </div>
+ <h1>②</h1>
 
-  <h1>②</h1>
-
-  <!-- Pergunta 2 - opções horizontais -->
+  <!-- Pergunta 1 -->
   <div class="quiz-block">
-    <h1>「Obrigado」の意味は？</h1>
+    <h1>ブラジルと日本の時差は？</h1>
+    <img src="ボードゲーム.jpg" alt="Imagem da pergunta" width="300">
 
-    <div class="horizontal-options">
-      <div class="option-large">
-        <p>１ ラズベリー</p>
-        <img src="img1.jpg" alt="こんにちは">
-      </div>
-      <div class="option-large">
-        <p>２ ありがとう</p>
-        <img src="img2.jpg" alt="ありがとう">
-      </div>
-      <div class="option-large">
-        <p>３ おやすみ</p>
-        <img src="img3.jpg" alt="おやすみ">
-      </div>
-      <div class="option-large">
-        <p>４ さようなら</p>
-        <img src="img4.jpg" alt="さようなら">
-      </div>
+    <div class="option">
+      <p>１　１０時間</p>
+    </div>
+    <div class="option">
+      <p>２ １１時間</p>
+    </div>
+    <div class="option">
+      <p>３ １２時間</p>
+    </div>
+    <div class="option">
+      <p>４ １３時間</p>
     </div>
 
     <button onclick="showAnswer('a2')">正解</button>
     <div id="a2" class="answer">
-      正解：２ ありがとう
-      <img src="img-resposta2.jpg" alt="Imagem da resposta 2">
+      <h1>正解：２ １２時間</h1>
+      <img src="img-resposta1.jpg" alt="Imagem da resposta 1">
     </div>
   </div>
 

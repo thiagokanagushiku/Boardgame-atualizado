@@ -2,31 +2,128 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>クイズ１４</title>
+  <title>クイズ２６</title>
   <style>
-    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px;  }
-    h1 { font-size: 50px; margin-bottom: 30px; }
+    body { text-align: center; background: #222; color: white; font-family: Arial; padding: 50px; }
+    h1 { font-size: 40px; margin-bottom: 40px; }
+    .quiz-block {
+      background: #333;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+    }
     p { font-size: 24px; }
-    .media { margin: 20px auto; max-width: 80%; }
-    #answer { display: none; padding: 20px; background: #444; margin-top: 20px; transition: background 0.5s; }
-    #answer.correct { background: green;font-size: 60px; }
-    button { font-size: 20px; margin: 10px; padding: 10px 20px; }
+    .answer {
+      display: none;
+      padding: 20px;
+      background: #444;
+      margin-top: 20px;
+      transition: background 0.5s;
+    }
+    .answer.correct {
+      background: green;
+      font-size: 30px;
+    }
+    .answer img {
+      width: 250px;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .option {
+      margin: 20px 0;
+    }
+    .option img {
+      width: 150px;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    /* Estilo horizontal para pergunta 2 */
+    .horizontal-options {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .horizontal-options .option {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .option-large img {
+  width: 250px;
+}
   </style>
 </head>
 <body>
-  <h1>ブラジルの作家は？</h1>
+  <h1>①</h1>
+  <!-- Pergunta 2 - opções horizontais -->
+  <div class="quiz-block">
+    <h1>ブラジルの世界遺産は？</h1>
+
+    <div class="horizontal-options">
+      <div class="option-large">
+        <p>１ マチュピチュ</p>
+        <img src="./imagens/machupicchu.jpg" alt="こんにちは">
+      </div>
+      <div class="option-large">
+        <p>２ アンデス山脈</p>
+        <img src="./imagens/andes.jpg" alt="ありがとう">
+      </div>
+      <div class="option-large">
+        <p>３ アタカマ砂漠</p>
+        <img src="./imagens/atacama.jpg" alt="おやすみ">
+      </div>
+      <div class="option-large">
+        <p>４ イグアス滝</p>
+        <img src="./imagens/iguacu.jpg" alt="さようなら">
+      </div>
+    </div>
+
+    <button onclick="showAnswer('a1')">正解</button>
+    <div id="a1" class="answer">
+      <h1> 正解：４ イグアス滝</h1>
+      <img src="./imagens/iguacu.jpg" alt="Imagem da resposta 2">
+    </div>
   </div>
-  <p>１ マシャド・デ・アシス</p>
-  <p>２ フェルナンド・ペソア</p>
-  <p>３ ジョゼ・サラマーゴ</p>
-  <p>４ ルイス・デ・カモンイス</p>
-  <button onclick="showAnswer()">正解</button>
+ <h1>②</h1>
+
+  <!-- Pergunta 1 -->
+  <div class="quiz-block">
+    <h1>ブラジルと日本の時差は？</h1>
+    <img src="ボードゲーム.jpg" alt="Imagem da pergunta" width="300">
+
+    <div class="option">
+      <p>１　１０時間</p>
+    </div>
+    <div class="option">
+      <p>２ １１時間</p>
+    </div>
+    <div class="option">
+      <p>３ １２時間</p>
+    </div>
+    <div class="option">
+      <p>４ １３時間</p>
+    </div>
+
+    <button onclick="showAnswer('a2')">正解</button>
+    <div id="a2" class="answer">
+      <h1>正解：２ １２時間</h1>
+      <img src="img-resposta1.jpg" alt="Imagem da resposta 1">
+    </div>
+  </div>
+
   <button onclick="location.href='index.html'">戻る</button>
-  <div id="answer">１ マシャド・デ・アシス</div>
 
   <script>
-    function showAnswer() {
-      const ans = document.getElementById('answer');
+    function showAnswer(id) {
+      const ans = document.getElementById(id);
       ans.style.display = 'block';
       setTimeout(() => ans.classList.add('correct'), 200);
     }
