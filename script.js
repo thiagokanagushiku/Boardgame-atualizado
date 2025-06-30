@@ -12,6 +12,7 @@ for (let row = 0; row < 5; row++) { // 5 linhas
     if (i === 31) break; // parar no 31
     const cell = document.createElement("div");
     cell.className = "cell";
+
     if (i === 1) {
       cell.textContent = "スタート";
       cell.classList.add("start");
@@ -20,24 +21,30 @@ for (let row = 0; row < 5; row++) { // 5 linhas
       cell.textContent = "ゴール";
       cell.classList.add("goal");
       cell.dataset.num = 30;
+    } else if (i === 23) { // casa 22
+      cell.textContent = "ゴール";
+      cell.classList.add("goal");
+      cell.dataset.num = 22;
     } else {
       cell.textContent = i - 1;
       cell.classList.add(colors[(i - 2) % 4]);
       cell.dataset.num = i - 1;
     }
+
     cell.id = `cell-${i - 1}`;
 
     const markerContainer = document.createElement("div");
     markerContainer.className = "markers";
     cell.appendChild(markerContainer);
 
-    if (i > 1 && i < 30) {
+    if (i > 1 && i < 30 && i !== 23) { // exclui a casa 22 para não sobrescrever
       if (samePages.includes(i - 1)) {
         cell.onclick = () => window.open("pagina_externa.html", "_blank");
       } else {
         cell.onclick = () => window.open(`pergunta_${i - 1}.html`, "_blank");
       }
     }
+
     board.appendChild(cell);
     cells.push(cell);
   }
@@ -78,7 +85,7 @@ function moveSelected(step) {
 function moveGroup(groupNum, step) {
   let pos = groups[groupNum].position + step;
   if (pos < 0) pos = 0;
-  if (pos > 30) pos = 30; // máximo agora é 30
+  if (pos > 30) pos = 30;
   groups[groupNum].position = pos;
   document.querySelector(`#cell-${pos} .markers`).appendChild(groups[groupNum].marker);
 }
